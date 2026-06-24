@@ -1,50 +1,66 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT (v1.0.0)
+  Version Bump: INITIAL → 1.0.0 (New constitution)
+  Added Principles: I. Content-First Design, II. Accuracy & Attribution, III. Static-First, IV. Simplicity & Accessibility
+  Added Sections: Structure & Organization, Development Workflow, Governance
+  No principles removed or renamed (initial constitution)
+  Templates requiring updates: ✅ plan-template.md, ✅ spec-template.md, ✅ tasks-template.md
+  No intentionally deferred placeholders
+-->
+
+# lyvykhang.github.io: Academic CV & Publications Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Content-First Design
+Every page prioritizes substantive academic and professional content; navigation and styling serve
+content, not the reverse. Content structure drives layout decisions. The site exists to showcase
+research, credentials, and professional milestones—UI must never obscure or delay access to this
+information. All design choices must justify their value in surfacing or contextualizing content.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Accuracy & Attribution
+All publications, credentials, career information, and announcements must be verifiable and
+accurately dated. Every research claim has source attribution (DOI, link, or permanent archive).
+News and career updates reflect actual changes (new publications, position changes, etc.).
+Corrections and updates take absolute priority over new content—misinformation or outdated
+claims MUST be addressed immediately upon discovery.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Static-First Implementation
+The site is generated as static HTML, CSS, and assets via Hugo; external dependencies are
+minimized. All pages render correctly without JavaScript. PDFs, images, and other academic
+assets are self-hosted as static files. Dynamic content (e.g., external widget feeds) is
+avoided unless it has clear academic value and graceful fallback behavior.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Simplicity & Accessibility
+The XMin theme enforces minimalism; unnecessary UI elements are removed. Semantic HTML ensures
+proper document structure. The site is readable and navigable via keyboard and screen readers.
+Readability is prioritized: sufficient contrast, legible fonts, clear hierarchy. Mobile rendering
+must be functional (not necessarily beautiful) but never sacrifices content accessibility.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Structure & Organization
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+**Mandatory Pages:**
+- **Homepage (About Me)**: Bio paragraph(s), profile picture, brief research direction summary, subsection for news & announcements (career milestones, new publications, etc.)
+- **Research**: Listing of publications (sorted by date, with links/PDIs, co-authors)
+- **CV**: Static PDF asset, LaTeX-generated page, or regular markdown page with full CV content
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Content is organized by publication date and career timeline. Archives are maintained for historical
+reference. Each publication entry includes: title, authors, venue, date, link/DOI, and short description
+if needed for context.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Development Workflow
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+Local testing is performed via `hugo server -D` before publishing to GitHub Pages. Content updates
+are made via Markdown files in `content/posts/` or appropriate section directory. Commits use clear,
+descriptive messages referencing the type of update (publication, bio update, news, etc.). GitHub
+Pages auto-deploys on `main` branch push. All changes are tracked in Git history for audit and
+recovery purposes.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices for the site. All updates must preserve
+content accuracy (Principle II takes precedence over speed of deployment). Theme customizations must
+not violate Principles I or IV (content-first, simplicity, accessibility). A quarterly review of
+publications and career milestones is performed to ensure currency and accuracy. Amendments to this
+constitution require clear documentation of rationale and impact on existing content.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-06-23 | **Last Amended**: 2026-06-23
