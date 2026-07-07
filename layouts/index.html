@@ -1,0 +1,46 @@
+{{ partial "header.html" . }}
+
+<main>
+<h1>{{ .Title | markdownify }}</h1>
+
+{{ with .Params.profile_image }}
+<img
+  class="profile-photo"
+  src="{{ . | relURL }}"
+  alt="Profile photo"
+  width="200"
+  height="200"
+  style="width:200px;height:200px;background-color:#e0e0e0;display:block;object-fit:cover;" />
+{{ end }}
+
+<section aria-labelledby="about-heading">
+<h2 id="about-heading">About</h2>
+{{ .Content }}
+</section>
+
+{{ with .Params.research_summary }}
+<section aria-labelledby="research-summary-heading">
+<h2 id="research-summary-heading">Research Direction</h2>
+<p>{{ . | markdownify }}</p>
+</section>
+{{ end }}
+
+<section aria-labelledby="news-heading">
+<h2 id="news-heading">News</h2>
+{{ with .Params.news }}
+<ul class="news">
+  {{ range sort . "date" "desc" }}
+  <li>
+    <span class="date">{{ dateFormat "2006/01/02" .date }}</span>
+    <strong>{{ .title | markdownify }}</strong>
+    {{ with .summary }}<span> — {{ . | markdownify }}</span>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p>No announcements at this time.</p>
+{{ end }}
+</section>
+</main>
+
+{{ partial "footer.html" . }}
