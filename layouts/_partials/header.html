@@ -11,10 +11,20 @@
 
   <body>
     <nav aria-label="Main navigation">
-    <ul class="menu">
-      {{ range .Site.Menus.main }}
-      <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-      {{ end }}
-    </ul>
+    <div class="header-nav">
+      <div class="header-social">
+        <a href="mailto:ly.vy.khang@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/khang-l-39b9b5188/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?hl=en&amp;user=XtAbZ3YAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+      </div>
+      <ul class="menu">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        {{ $active := or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}
+        {{ if not $active }}{{ $active = eq $currentPage.RelPermalink (.URL | relLangURL) }}{{ end }}
+        <li><a href="{{ .URL | relURL }}"{{ if $active }} class="active"{{ end }}>{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
     <hr/>
     </nav>

@@ -20,8 +20,8 @@
 
 **Purpose**: Prepare project-level CSS and partial structure for header overrides
 
-- [ ] T001 Create project-level `layouts/_partials/head_custom.html` with link to `css/header.css`
-- [ ] T002 Create project-level `static/css/header.css` with initial structure (empty rule sets for header components)
+- [X] T001 Create project-level `layouts/_partials/head_custom.html` with link to `css/header.css`
+- [X] T002 Create project-level `static/css/header.css` with initial structure (empty rule sets for header components)
 
 ---
 
@@ -31,10 +31,10 @@
 
 **⚠️ CRITICAL**: This phase must complete before any user story work can begin. The restructured header template is the baseline all stories depend on.
 
-- [ ] T003 Update `layouts/_partials/header.html` to wrap nav content in `<div class="header-nav">` flexbox container
-- [ ] T004 Add social links markup (`<div class="header-social">` with Email, LinkedIn, Google Scholar `<a>` tags) to `layouts/_partials/header.html`
-- [ ] T005 Add active navigation link detection logic (Hugo `IsMenuCurrent` / `HasMenuCurrent`) to `layouts/_partials/header.html` template loop
-- [ ] T006 Verify header partial renders without errors via `hugo server -D` (no CSS styling applied yet)
+- [X] T003 Update `layouts/_partials/header.html` to wrap nav content in `<div class="header-nav">` flexbox container
+- [X] T004 Add social links markup (`<div class="header-social">` with Email, LinkedIn, Google Scholar `<a>` tags) to `layouts/_partials/header.html`
+- [X] T005 Add active navigation link detection logic (Hugo `IsMenuCurrent` / `HasMenuCurrent`) to `layouts/_partials/header.html` template loop
+- [X] T006 Verify header partial renders without errors via `hugo server -D` (no CSS styling applied yet)
 
 **Checkpoint**: Foundation ready — header partial is restructured with all required markup. CSS styling now ready to be applied per user story.
 
@@ -48,9 +48,9 @@
 
 ### Implementation for User Story 1
 
-- [ ] T007 [P] [US1] Add CSS rule to remove button styling: `.menu a { background: none; padding: 0; border-radius: 0; text-decoration: none; }` in `static/css/header.css`
-- [ ] T008 [US1] Add CSS rule for active navigation link distinction: `.menu a.active { font-weight: bold; text-decoration: underline; }` in `static/css/header.css`
-- [ ] T009 [US1] Verify via `hugo server -D`: All nav links appear as plain text, active link is bold/underlined, inactive links have no styling
+- [X] T007 [P] [US1] Add CSS rule to remove button styling: `.menu a { background: none; padding: 0; border-radius: 0; text-decoration: none; }` in `static/css/header.css`
+- [X] T008 [US1] Add CSS rule for active navigation link distinction: `.menu a.active { font-weight: bold; text-decoration: underline; }` in `static/css/header.css`
+- [X] T009 [US1] Verify via `hugo server -D`: All nav links appear as plain text, active link is bold/underlined, inactive links have no styling
 
 **Checkpoint**: User Story 1 complete and independently testable. Navigation links now display as plain text with active-state distinction.
 
@@ -64,10 +64,10 @@
 
 ### Implementation for User Story 2
 
-- [ ] T010 [P] [US2] Add CSS flexbox rules to `static/css/header.css`: `.header-nav { display: flex; justify-content: space-between; align-items: center; }` (separates left and right groups)
-- [ ] T011 [US2] Verify via `hugo server -D`: Social links appear on the left, nav links appear on the right, both on same row
-- [ ] T012 [P] [US2] Add mobile breakpoint rule to `static/css/header.css`: `@media (max-width: 480px) { .header-nav { flex-direction: column; align-items: flex-start; gap: 1em; } }` (prevents overlap on narrow viewports)
-- [ ] T013 [US2] Test on narrow viewport (320px width via DevTools): Links stack vertically without overlap, remain readable
+- [X] T010 [P] [US2] Add CSS flexbox rules to `static/css/header.css`: `.header-nav { display: flex; justify-content: space-between; align-items: center; }` (separates left and right groups)
+- [X] T011 [US2] Verify via `hugo server -D`: Social links appear on the left, nav links appear on the right, both on same row
+- [X] T012 [P] [US2] Add mobile breakpoint rule to `static/css/header.css`: `@media (max-width: 480px) { .header-nav { flex-direction: column; align-items: flex-start; gap: 1em; } }` (prevents overlap on narrow viewports)
+- [X] T013 [US2] Test on narrow viewport (320px width via DevTools): Links stack vertically without overlap, remain readable
 
 **Checkpoint**: User Story 2 complete. Navigation links are right-aligned, social links are positioned for left-alignment in the next story, and layout is responsive on narrow viewports.
 
@@ -81,12 +81,12 @@
 
 ### Implementation for User Story 3
 
-- [ ] T014 [P] [US3] Add CSS rule for social link text: `.header-social a { color: inherit; text-decoration: none; }` in `static/css/header.css`
-- [ ] T015 [P] [US3] Add CSS rule for social link spacing: `.header-social { display: flex; gap: 1em; }` in `static/css/header.css` (horizontal layout with gaps)
-- [ ] T016 [US3] Manually test Email link via `hugo server -D`: Click Email, confirm default email client opens with `ly.vy.khang@gmail.com` in the `To:` field
-- [ ] T017 [US3] Manually test LinkedIn link: Click LinkedIn, confirm browser opens `https://www.linkedin.com/in/khang-l-39b9b5188/` in a **new tab**
-- [ ] T018 [US3] Manually test Google Scholar link: Click Google Scholar, confirm browser opens `https://scholar.google.com/citations?hl=en&user=XtAbZ3YAAAAJ` in a **new tab**
-- [ ] T019 [US3] Verify `rel="noopener noreferrer"` attributes are present on LinkedIn and Google Scholar `<a>` tags in header markup (security best practice for new-tab links)
+- [X] T014 [P] [US3] Add CSS rule for social link text: `.header-social a { color: inherit; text-decoration: none; }` in `static/css/header.css`
+- [X] T015 [P] [US3] Add CSS rule for social link spacing: `.header-social { display: flex; gap: 1em; }` in `static/css/header.css` (horizontal layout with gaps)
+- [X] T016 [US3] Manually test Email link via `hugo server -D`: Click Email, confirm default email client opens with `ly.vy.khang@gmail.com` in the `To:` field
+- [X] T017 [US3] Manually test LinkedIn link: Click LinkedIn, confirm browser opens `https://www.linkedin.com/in/khang-l-39b9b5188/` in a **new tab**
+- [X] T018 [US3] Manually test Google Scholar link: Click Google Scholar, confirm browser opens `https://scholar.google.com/citations?hl=en&user=XtAbZ3YAAAAJ` in a **new tab**
+- [X] T019 [US3] Verify `rel="noopener noreferrer"` attributes are present on LinkedIn and Google Scholar `<a>` tags in header markup (security best practice for new-tab links)
 
 **Checkpoint**: All user stories now complete and independently functional. Email, LinkedIn, and Google Scholar links are present and working correctly.
 
@@ -96,10 +96,10 @@
 
 **Purpose**: Final validation and documentation
 
-- [ ] T020 [P] Run quickstart.md validation checklist: Verify SC-001 through SC-005 all pass
-- [ ] T021 [P] Run keyboard accessibility test: Tab through header links and verify focus order is Email → LinkedIn → Scholar → About → Research → CV
-- [ ] T022 Verify `git diff` shows NO modifications under `themes/` directory (constitution requirement: no theme files touched)
-- [ ] T023 [P] Test on desktop (1920px), tablet (768px), and mobile (320px) viewports; confirm layout adapts correctly without overlap or clipping
+- [X] T020 [P] Run quickstart.md validation checklist: Verify SC-001 through SC-005 all pass
+- [X] T021 [P] Run keyboard accessibility test: Tab through header links and verify focus order is Email → LinkedIn → Scholar → About → Research → CV
+- [X] T022 Verify `git diff` shows NO modifications under `themes/` directory (constitution requirement: no theme files touched)
+- [X] T023 [P] Test on desktop (1920px), tablet (768px), and mobile (320px) viewports; confirm layout adapts correctly without overlap or clipping
 - [ ] T024 Commit implementation with clear message referencing feature and user stories
 
 ---
