@@ -1,0 +1,55 @@
+/* Header overrides for lyvykhang.github.io
+   Project-level overrides for the XMin theme header. Loaded after the theme's
+   style.css (via head_custom.html), so equal-specificity rules win by cascade
+   order. Does not modify any file under themes/. */
+
+/* Header layout: social links (left) and navigation (right) */
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+}
+
+/* Social/contact link group (left) */
+.header-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.header-social a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Navigation link group (right): remove theme button styling */
+.menu {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.menu a {
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: none;
+}
+
+/* Active navigation link */
+.menu a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Mobile: stack groups vertically to avoid overlap on narrow viewports */
+@media (max-width: 480px) {
+  .header-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75em;
+  }
+}
