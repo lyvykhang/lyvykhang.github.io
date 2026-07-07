@@ -88,7 +88,7 @@ layouts/
 ├── _default/
 │   ├── list.html              # Section/list rendering (if overridden)
 │   └── single.html            # Single page rendering (if overridden)
-└── partials/
+└── _partials/
     └── header.html            # Navigation labels/ordering if customization needed
 
 static/
