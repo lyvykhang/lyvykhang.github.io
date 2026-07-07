@@ -1,0 +1,29 @@
+{{ partial "header.html" . }}
+
+<main>
+<h1>{{ .Title | markdownify }}</h1>
+
+{{ .Content }}
+
+{{ $pages := where .Pages "Section" "research" }}
+{{ with $pages }}
+<ul class="publications">
+  {{ range .ByDate.Reverse }}
+  <li>
+    <span class="date">{{ .Date.Format "2006" }}</span>
+    {{ if .Params.doi_or_url }}
+    <a href="{{ .Params.doi_or_url }}"><strong>{{ .Title | markdownify }}</strong></a>
+    {{ else }}
+    <strong>{{ .Title | markdownify }}</strong>
+    {{ end }}
+    {{ with .Params.authors }}<div class="authors">{{ delimit . ", " }}</div>{{ end }}
+    {{ with .Params.venue }}<div class="venue"><em>{{ . | markdownify }}</em></div>{{ end }}
+  </li>
+  {{ end }}
+</ul>
+{{ else }}
+<p>No publications are listed yet.</p>
+{{ end }}
+</main>
+
+{{ partial "footer.html" . }}
